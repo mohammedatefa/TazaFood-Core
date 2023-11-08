@@ -10,13 +10,15 @@ namespace TazaFood_Core.IRepositories
 {
     public interface IGenericRepository<T> where T:BaseModel
     {
-        public Task<IEnumerable<T>> GetAllAsync();
-        public Task<T> GetByIdAsync(int id);
-
+       
+        public Task<IEnumerable<T>> GetAll();
 
         //get model useng the specification class instead of using the normal way to include any property 
         public Task<IEnumerable<T>> GetAllWithSpec(ISpecification<T> spec);
         public Task<T> GetByIdWithSpec(ISpecification<T> spec);
+
+        public Task Add(T entity);
+
 
     }
 }
