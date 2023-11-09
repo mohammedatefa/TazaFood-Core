@@ -12,6 +12,8 @@ namespace TazaFood_Core.ISpecifications
     {
         public Expression<Func<T, bool>> Ceritaria { get; set; }
         public List<Expression<Func<T, object>>> Includes { set; get; } = new List<Expression<Func<T, object>>>();
+        public Expression<Func<T, object>> OrderBy { get; set; }
+        public Expression<Func<T, object>> OrderByDec { get ; set ; }
 
         public BaseSpecification() { }
 
