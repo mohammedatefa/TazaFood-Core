@@ -12,7 +12,5 @@ namespace TazaFood_Core.Models
         public string  Name { get; set; }
         public string Description { get; set; }
 
-        [JsonIgnore]
-        public IEnumerable<Product> Products {  get; set; }
     }
 }
