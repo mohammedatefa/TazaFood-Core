@@ -14,6 +14,9 @@ namespace TazaFood_Core.ISpecifications
         public List<Expression<Func<T, object>>> Includes { set; get; } = new List<Expression<Func<T, object>>>();
         public Expression<Func<T, object>> OrderBy { get; set; }
         public Expression<Func<T, object>> OrderByDec { get ; set ; }
+        public int Skip { get; set; }
+        public int Take { get; set; }
+        public bool EnablePagination { get; set; }
 
         public BaseSpecification() { }
 
@@ -22,5 +25,12 @@ namespace TazaFood_Core.ISpecifications
            Ceritaria = cr;
         }
 
+        public void ApplyPagination(int skip,int take)
+        {
+            
+            EnablePagination = true;
+            Skip = skip;
+            Take = take;
+        }
     }
 }
