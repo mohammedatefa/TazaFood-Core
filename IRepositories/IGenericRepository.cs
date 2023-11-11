@@ -12,17 +12,19 @@ namespace TazaFood_Core.IRepositories
     {
 
         public Task<T> GetById(int id);
+
         public Task<IEnumerable<T>> GetAll();
 
         //get model useng the specification class instead of using the normal way to include any property 
         public Task<IEnumerable<T>> GetAllWithSpec(ISpecification<T> spec);
         public Task<T> GetByIdWithSpec(ISpecification<T> spec);
 
+
         public Task Add(T entity);
 
-        public Task Update(int id,T entity);
+        public Task<bool> Update(int id,T entity);
 
-        public Task Delete(int id);
+        public Task<bool> Delete(int id);
 
 
     }
