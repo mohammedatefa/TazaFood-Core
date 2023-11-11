@@ -9,6 +9,6 @@ namespace TazaFood_Core.IRepositories
 {
     public interface ICategoryRepository 
     {
-        public Task<Category> GetByName(string name);
+        public Task<List<Category>> GetByName(string name);
     }
 }
