@@ -16,5 +16,10 @@ namespace TazaFood_Core.ISpecifications
 
         public Expression<Func<T, object>> OrderBy { get; set; }
         public Expression<Func<T, object>> OrderByDec { get; set; }
+
+        public int Skip { get; set; }
+        public int Take { get; set; }
+
+        public bool EnablePagination { get; set; }
     }
 }
