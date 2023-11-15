@@ -12,5 +12,7 @@ namespace TazaFood_Core.Services
         Task<Order> CreateOrder(string userEmail, string cartId, int deliveryMethod, Address shippingAddress);
         Task<IReadOnlyList<Order>> GetAllOrdersForUser(string userEmail);
         Task<Order> GetOrderById(int orderId, string userEmail);
+
+        Task<IReadOnlyList<DeliveryMethod>> GetDeleveryMethods();
     }
 }

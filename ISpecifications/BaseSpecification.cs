@@ -32,5 +32,7 @@ namespace TazaFood_Core.ISpecifications
             Skip = skip;
             Take = take;
         }
+        public void AddOrderByDesending(Expression<Func<T, object>> OrderByDesendingExpression)
+            => OrderByDec = OrderByDesendingExpression;
     }
 }
