@@ -12,7 +12,7 @@ namespace TazaFood_Core.ISpecifications
         public ProductWithFillterationForPaginationSpecification(ProductPaginationParams pagination) : base(
             p => (!pagination.FilterByPrice.HasValue || p.Price >= pagination.FilterByPrice.Value) &&
             (!pagination.FilterByRate.HasValue || p.Rate >= pagination.FilterByRate.Value) &&
-            (pagination.FilterBycategory == null || p.Category.Name == pagination.FilterBycategory)&&
+            (pagination.FilterBycategory == null || p.Category.Name.Contains(pagination.FilterBycategory))&&
              (string.IsNullOrEmpty(pagination.Search) || p.Name.ToLower().Contains(pagination.Search)))
         {
 
