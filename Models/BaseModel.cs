@@ -8,6 +8,6 @@ namespace TazaFood_Core.Models
 {
     public class BaseModel
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
     }
 }
