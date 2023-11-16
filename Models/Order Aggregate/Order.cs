@@ -10,13 +10,14 @@ namespace TazaFood_Core.Models.Order_Aggregate
     {
         public Order() { }
         
-        public Order(string buyerEmail, Address shippingAddress, DeliveryMethod deliveryMethod, ICollection<OrderItem> orderItems, decimal subTotal)
+        public Order(string buyerEmail, Address shippingAddress, DeliveryMethod deliveryMethod, ICollection<OrderItem> orderItems, decimal subTotal,string paymentIntentId)
         {
             BuyerEmail = buyerEmail;
             ShippingAddress = shippingAddress;
             DeliveryMethod = deliveryMethod;
             OrderItems = orderItems;
             SubTotal = subTotal;
+            PaymentIntent = paymentIntentId;
         }
 
         public string BuyerEmail { get; set; }
@@ -27,7 +28,7 @@ namespace TazaFood_Core.Models.Order_Aggregate
         public ICollection<OrderItem> OrderItems { get; set; } = new HashSet<OrderItem>();
         public decimal SubTotal { get; set; }
         public decimal GetTotalPrice() => SubTotal + DeliveryMethod.Cost;
-        public string PaymentIntent { get; set; } = string.Empty;
+        public string PaymentIntent { get; set; }
 
     }
 }

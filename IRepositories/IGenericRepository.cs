@@ -30,6 +30,7 @@ namespace TazaFood_Core.IRepositories
         public Task<bool> Update(int id,T entity);
 
         public Task<bool> Delete(int id);
+        public Task<bool> Delete(T entity);
 
 
     }
