@@ -8,6 +8,7 @@ namespace TazaFood_Core.Models
 {
     public class Review : BaseModel
     {
+        public string UserName { get; set; }
         public string Content { get; set; }
     }
 }
